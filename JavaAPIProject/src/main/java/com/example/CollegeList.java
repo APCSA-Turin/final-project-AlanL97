@@ -113,12 +113,11 @@ public class CollegeList {
                 text += line;
             }
             String[] arr = text.split("(?<=})");
-            if (arr.length > 1) {
+            if (arr[0].indexOf("}") > -1) {
                 for (int i = 0; i < arr.length; i++) {
-                JSONObject obj = new JSONObject(arr[i]);
-                list.add(obj);
-            }
-
+                    JSONObject obj = new JSONObject(arr[i]);
+                    list.add(obj);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
